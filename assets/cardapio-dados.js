@@ -17,16 +17,16 @@ window.CARDAPIO = [
         titulo: "Salgados",
         itens: [
           { nome: "Carne", preco: "10,00" },
-          { nome: "Queijo", preco: "10,00" },
+          { nome: "Queijo", preco: "10,00", foto: "pastel-queijo.jpg" },
           { nome: "Palmito", preco: "10,00" },
           { nome: "Bacalhau", preco: "15,00" },
-          { nome: "Carne e queijo", preco: "10,00" },
+          { nome: "Carne e queijo", preco: "10,00", foto: "pastel-carne-queijo.jpg" },
           { nome: "Frango com palmito", preco: "10,00" },
           { nome: "Frango com requeijão", preco: "10,00" },
           { nome: "Calabresa com requeijão", preco: "10,00" },
           { nome: "Presunto e muçarela", preco: "10,00" },
           { nome: "Pastel de pizza", preco: "10,00" },
-          { nome: "Carne seca com requeijão", preco: "13,00" }
+          { nome: "Carne seca com requeijão", preco: "13,00", foto: "pastel-carne-seca.jpg" }
         ]
       },
       {
@@ -34,7 +34,7 @@ window.CARDAPIO = [
         icone: "deco-ic-chocolate.png",
         itens: [
           { nome: "Nutella", preco: "13,00" },
-          { nome: "Romeu e Julieta", preco: "13,00" },
+          { nome: "Romeu e Julieta", desc: "queijo com goiabada", preco: "13,00", foto: "pastel-romeu-julieta.jpg" },
           { nome: "Banana com requeijão", desc: "açúcar e canela", preco: "13,00" }
         ]
       }
