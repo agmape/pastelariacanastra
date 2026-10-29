@@ -348,3 +348,80 @@ footer p { margin: 0; }
   .wa-float span { display: none; }
 }
 footer { padding-bottom: 5.5rem; }
+
+/* ---------- Cardápio na página inicial: categorias ---------- */
+.tiles {
+  position: relative; z-index: 1;
+  max-width: 1180px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(.7rem, 1.8vw, 1.25rem);
+}
+.tile {
+  position: relative; display: flex; flex-direction: column; justify-content: flex-end;
+  aspect-ratio: 4 / 5; border-radius: 16px; overflow: hidden; text-decoration: none; color: var(--placa);
+  background: #120c0a; border: 1px solid rgba(232, 97, 26, .45);
+  padding: 1rem;
+  transition: transform .2s ease, border-color .2s ease;
+}
+.tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.tile-deco img { object-fit: contain; mix-blend-mode: lighten; padding: 6% 6% 30%; }
+.tile-full img { padding: 0; object-fit: cover; object-position: top; }
+.tile::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(18, 12, 10, .95) 8%, rgba(18, 12, 10, .2) 55%, transparent 75%); }
+.tile-nome, .tile-preco { position: relative; z-index: 1; }
+.tile-nome { font: 600 clamp(1.15rem, 2.4vw, 1.5rem)/1.05 "Oswald", var(--body); text-transform: uppercase; }
+.tile-preco { font-size: .92rem; color: rgba(255, 243, 218, .8); margin-top: .25rem; }
+.tile-preco b { color: #FF8A3D; }
+.tile:hover { transform: translateY(-3px); border-color: var(--laranja); }
+.tile:hover img { transform: scale(1.04); }
+@media (prefers-reduced-motion: reduce) { .tile, .tile img { transition: none; } .tile:hover, .tile:hover img { transform: none; } }
+
+.menu-cta { max-width: 1180px; margin: 2rem auto 2.5rem; text-align: center; }
+.btn-cardapio {
+  display: inline-block; text-decoration: none;
+  font: 600 clamp(1.3rem, 3vw, 1.7rem)/1 "Oswald", var(--body); text-transform: uppercase;
+  background: var(--laranja); color: var(--carvao);
+  padding: 1rem 2rem; border-radius: 999px; box-shadow: 0 5px 0 var(--laranja-escuro);
+}
+.btn-cardapio:hover { background: #F2742F; }
+.btn-cardapio:active { transform: translateY(2px); box-shadow: 0 3px 0 var(--laranja-escuro); }
+.menu-cta p { margin: .9rem 0 0; color: rgba(255, 243, 218, .75); }
+
+.menu .selos {
+  list-style: none; max-width: 1180px; margin: 2.5rem auto 0; padding: 1.1rem 1.25rem;
+  background: var(--laranja); color: var(--carvao); border-radius: 14px;
+  display: grid; grid-template-columns: repeat(4, auto); justify-content: space-around; gap: 1rem 2rem;
+}
+.menu .selos li { display: flex; align-items: center; gap: .55rem; font: 600 1.05rem/1.1 "Oswald", var(--body); text-transform: uppercase; padding: 0; border: 0; }
+.menu .selos svg { width: 34px; height: 34px; flex: none; }
+
+/* status aberto/fechado */
+.status { display: inline-flex; align-items: center; gap: .4rem; margin-left: .6rem; font-size: .9rem; font-weight: 700; }
+.status:empty { display: none; }
+.status::before { content: ""; width: .55rem; height: .55rem; border-radius: 50%; background: #999; }
+.status.is-open::before { background: #25D366; box-shadow: 0 0 0 3px rgba(37, 211, 102, .25); }
+.status.is-closed::before { background: #E5484D; }
+
+/* ---------- Mapa com imagem antes de carregar ---------- */
+.map { position: relative; min-height: 380px; background: var(--carvao); }
+.map-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.map::before { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(43, 27, 18, .75), transparent 60%); z-index: 1; }
+.map-card {
+  position: absolute; z-index: 2; left: 1rem; right: 1rem; bottom: 1rem;
+  background: var(--papel); color: var(--carvao); border-radius: 12px; padding: 1rem 1rem 1rem 3.6rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+}
+.map-card p { margin: 0; line-height: 1.35; }
+.map-nota { margin-top: .3rem !important; font-size: .92rem; }
+.pin { position: absolute; left: 1rem; top: 1rem; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: #EA4335; color: #fff; }
+.map-acoes { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .8rem; }
+.map-acoes .btn { padding: .6rem 1rem; font-size: .95rem; }
+.map-on::before { display: none; }
+.map-on iframe { position: absolute; inset: 0; width: 100%; height: 100%; min-height: 0; border: 0; }
+
+@media (max-width: 860px) {
+  .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tile { padding: .75rem; }
+  .tile-nome { font-size: 1.1rem; }
+  .tile-preco { font-size: .8rem; white-space: nowrap; }
+  .menu .selos { grid-template-columns: repeat(2, minmax(0, 1fr)); justify-content: stretch; }
+  .status { margin: .4rem 0 0; display: flex; }
+}

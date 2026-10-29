@@ -21,7 +21,7 @@
     <span class="oval"><span class="oval-small">Pastelaria</span>Canastra<span class="oval-small">Loja 2</span></span>
   </a>
   <nav aria-label="Seções">
-    <a href="#cardapio">Cardápio</a>
+    <a href="/cardapio">Cardápio</a>
     <a href="#fotos">Fotos</a>
     <a href="#visite">Como chegar</a>
   </nav>
@@ -33,12 +33,12 @@
     <div class="hero-text">
       <h1>Todo dia é dia de pastel.</h1>
       <p class="lede">Pastel frito na hora, crocante e com recheio generoso — o verdadeiro sabor da feira, no Centro de Sacramento. Tem também salgados, bolos fofinhos, doces e pão de queijo mineiro legítimo.</p>
-      <p class="when">Café da manhã, almoço ou aquele lanche da tarde.</p>
+      <p class="when">Do almoço ao lanche da tarde e, no sábado, desde o café da manhã.</p>
       <div class="actions">
-        <a class="btn btn-primary" href="#cardapio">Ver o cardápio</a>
+        <a class="btn btn-primary" href="/cardapio">Ver o cardápio</a>
         <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&destination=Pastelaria+Canastra+loja+02,+R.+Maj.+Lima,+231,+Sacramento+-+MG" target="_blank" rel="noopener">Como chegar</a>
       </div>
-      <p class="rating"><span class="stars" aria-hidden="true">★★★★★</span> 5,0 no Google</p>
+      <p class="rating"><span class="stars" aria-hidden="true">★★★★★</span> 5,0 no Google <span class="status" data-status></span></p>
     </div>
     <figure class="hero-video">
       <span class="notch" aria-hidden="true"></span>
@@ -58,49 +58,52 @@
       <p class="menu-stars" aria-label="5 estrelas">★★★★★</p>
     </div>
 
-    <div class="menu-cols">
-      <div class="menu-group">
-        <h3><img class="h-ic deco" src="assets/img/deco-ic-pastel.png" alt="" aria-hidden="true"><span>Pastéis salgados</span></h3>
-        <ul>
-          <li><span class="item">Carne</span><span class="dots" aria-hidden="true"></span><span class="price">R$ 10,00</span></li>
-          <li><span class="item">Queijo</span><span class="dots" aria-hidden="true"></span><span class="price">R$ 10,00</span></li>
-          <li><span class="item">Palmito</span><span class="dots" aria-hidden="true"></span><span class="price">R$ 10,00</span></li>
-          <li><span class="item">Bacalhau</span><span class="dots" aria-hidden="true"></span><span class="price">R$ 15,00</span></li>
-          <li><span class="item">Carne e queijo</span><span class="dots" aria-hidden="true"></span><span class="price">R$ 10,00</span></li>
-          <li><span class="item">Frango com palmito</span><span class="dots" aria-hidden="true"></span><span class="price">R$ 10,00</span></li>
-          <li><span class="item">Frango com requeijão</span><span class="dots" aria-hidden="true"></span><span class="price">R$ 10,00</span></li>
-          <li><span class="item">Calabresa com requeijão</span><span class="dots" aria-hidden="true"></span><span class="price">R$ 10,00</span></li>
-          <li><span class="item">Presunto e muçarela</span><span class="dots" aria-hidden="true"></span><span class="price">R$ 10,00</span></li>
-          <li><span class="item">Pastel de pizza</span><span class="dots" aria-hidden="true"></span><span class="price">R$ 10,00</span></li>
-          <li><span class="item">Carne seca com requeijão</span><span class="dots" aria-hidden="true"></span><span class="price">R$ 13,00</span></li>
-        </ul>
-      </div>
+    <div class="tiles">
+      <a class="tile" href="/cardapio#pasteis">
+        <img src="assets/img/pastel-crocante.jpg" alt="Pastéis dourados recém-fritos" loading="lazy">
+        <span class="tile-nome">Pastéis</span>
+        <span class="tile-preco">a partir de <b>R$ 10,00</b></span>
+      </a>
+      <a class="tile" href="/cardapio#salgados">
+        <img src="assets/img/esfirras.jpg" alt="Esfirras com refrigerante e suco" loading="lazy">
+        <span class="tile-nome">Salgados</span>
+        <span class="tile-preco">a partir de <b>R$ 10,00</b></span>
+      </a>
+      <a class="tile tile-deco" href="/cardapio#caldos">
+        <img src="assets/img/deco-mesa.jpg" alt="Caldo, coxinhas e pastéis na mesa" loading="lazy">
+        <span class="tile-nome">Caldos</span>
+        <span class="tile-preco">a partir de <b>R$ 15,00</b></span>
+      </a>
+      <a class="tile" href="/cardapio#pratos">
+        <img src="assets/img/inhoque-bolonhesa.jpg" alt="Travessa de inhoque à bolonhesa" loading="lazy">
+        <span class="tile-nome">Pratos e massas</span>
+        <span class="tile-preco">a partir de <b>R$ 20,00</b></span>
+      </a>
+      <a class="tile" href="/cardapio#cafe">
+        <img src="assets/img/cappuccino.jpg" alt="Cappuccino com chantilly" loading="lazy">
+        <span class="tile-nome">Café e padaria</span>
+        <span class="tile-preco">a partir de <b>R$ 8,00</b></span>
+      </a>
+      <a class="tile" href="/cardapio#doces">
+        <img src="assets/img/bolo-red-velvet.jpg" alt="Bolo Red Velvet com cobertura de chocolate branco" loading="lazy">
+        <span class="tile-nome">Bolos e sobremesas</span>
+        <span class="tile-preco">a partir de <b>R$ 13,00</b></span>
+      </a>
+      <a class="tile tile-deco tile-full" href="/cardapio#bebidas">
+        <img src="assets/img/tile-bebidas.jpg" alt="Sucos e caixinhas de suco" loading="lazy">
+        <span class="tile-nome">Bebidas</span>
+        <span class="tile-preco">a partir de <b>R$ 4,00</b></span>
+      </a>
+      <a class="tile tile-deco" href="/cardapio#cervejas">
+        <img src="assets/img/deco-balde.jpg" alt="Balde de cervejas com gelo" loading="lazy">
+        <span class="tile-nome">Cervejas e drinks</span>
+        <span class="tile-preco">a partir de <b>R$ 7,00</b></span>
+      </a>
+    </div>
 
-      <div class="menu-group">
-        <h3><img class="h-ic deco" src="assets/img/deco-ic-chocolate.png" alt="" aria-hidden="true"><span>Pastéis doces</span></h3>
-        <ul>
-          <li><span class="item">Nutella</span><span class="dots" aria-hidden="true"></span><span class="price">R$ 13,00</span></li>
-          <li><span class="item">Romeu e Julieta</span><span class="dots" aria-hidden="true"></span><span class="price">R$ 13,00</span></li>
-          <li><span class="item">Banana com requeijão<small>açúcar e canela</small></span><span class="dots" aria-hidden="true"></span><span class="price">R$ 13,00</span></li>
-        </ul>
-
-        <h3><img class="h-ic deco" src="assets/img/deco-ic-coxinha.png" alt="" aria-hidden="true"><span>Salgados</span></h3>
-        <ul>
-          <li><span class="item">Coxinha</span><span class="dots" aria-hidden="true"></span><span class="price">R$ 10,00</span></li>
-          <li><span class="item">Mini pizza</span><span class="dots" aria-hidden="true"></span><span class="price">R$ 15,00</span></li>
-          <li><span class="item">Esfirra de carne</span><span class="dots" aria-hidden="true"></span><span class="price">R$ 10,00</span></li>
-          <li><span class="item">Esfirra de frango com requeijão</span><span class="dots" aria-hidden="true"></span><span class="price">R$ 10,00</span></li>
-        </ul>
-      </div>
-
-      <div class="menu-group">
-        <h3><img class="h-ic deco" src="assets/img/deco-ic-caldo.png" alt="" aria-hidden="true"><span>Caldos <small>500 ml</small></span></h3>
-        <ul>
-          <li><span class="item">Frango</span><span class="dots" aria-hidden="true"></span><span class="price">R$ 15,00</span></li>
-          <li><span class="item">Mandioca com calabresa</span><span class="dots" aria-hidden="true"></span><span class="price">R$ 15,00</span></li>
-          <li><span class="item">Feijão com calabresa e bacon</span><span class="dots" aria-hidden="true"></span><span class="price">R$ 15,00</span></li>
-        </ul>
-      </div>
+    <div class="menu-cta">
+      <a class="btn-cardapio" href="/cardapio">Abrir o cardápio completo</a>
+      <p>Pastéis, porções, pratos, bebidas e cervejas, todos com preço.</p>
     </div>
 
     <div class="delivery-band">
@@ -113,65 +116,12 @@
       <img class="mesa deco" src="assets/img/deco-mesa.jpg" alt="" aria-hidden="true">
     </div>
 
-    <div class="dishes">
-      <div class="dish-block">
-        <h3><span>Pratos</span></h3>
-        <div class="dish-grid">
-          <figure class="dish">
-            <img src="assets/img/file-parmegiana.jpg" alt="Travessa de filé mignon à parmegiana gratinado" loading="lazy">
-            <figcaption><span class="dish-name">Filé mignon à parmegiana</span><span class="price-row"><span></span><span class="price">R$ 65,00</span></span></figcaption>
-          </figure>
-          <figure class="dish">
-            <img class="contain" src="assets/img/lasanha.jpg" alt="Fatia de lasanha à bolonhesa gratinada" loading="lazy">
-            <figcaption><span class="dish-name">Lasanha à bolonhesa</span><small>com molho branco de 4 queijos</small><span class="price-row"><span>Média</span><span class="price">R$ 28,00</span></span><span class="price-row"><span>Grande</span><span class="price">R$ 50,00</span></span></figcaption>
-          </figure>
-          <figure class="dish">
-            <img src="assets/img/panqueca.jpg" alt="Panquecas com molho de tomate e queijo ralado" loading="lazy">
-            <figcaption><span class="dish-name">Panquecas</span><small>carne moída, frango com requeijão ou presunto e muçarela</small><span class="price-row"><span>Média · 3 un.</span><span class="price">R$ 25,00</span></span><span class="price-row"><span>Grande · 6 un.</span><span class="price">R$ 50,00</span></span></figcaption>
-          </figure>
-        </div>
-      </div>
-      <div class="dish-block">
-        <h3><span>Lanches e café</span></h3>
-        <div class="dish-grid">
-          <figure class="dish">
-            <img src="assets/img/sanduiche-natural.jpg" alt="Sanduíches naturais embalados" loading="lazy">
-            <figcaption><span class="dish-name">Sanduíche natural</span><small>patê de frango com cenoura, alface, tomate e maionese</small><span class="price-row"><span></span><span class="price">R$ 12,00</span></span></figcaption>
-          </figure>
-          <figure class="dish">
-            <img src="assets/img/cappuccino.jpg" alt="Xícara de cappuccino com chantilly" loading="lazy">
-            <figcaption><span class="dish-name">Cappuccino</span><span class="price-row"><span></span><span class="price">R$ 12,00</span></span></figcaption>
-          </figure>
-          <figure class="dish">
-            <img src="assets/img/esfirras.jpg" alt="Duas esfirras com refrigerante e suco" loading="lazy">
-            <figcaption><span class="dish-name">Esfirras</span><small>carne ou frango com requeijão</small><span class="price-row"><span></span><span class="price">R$ 10,00</span></span></figcaption>
-          </figure>
-          <figure class="dish">
-            <img src="assets/img/pao-de-queijo.jpg" alt="Pacotes de pão de queijo artesanal" loading="lazy">
-            <figcaption><span class="dish-name">Pão de queijo artesanal</span><small>100% caipira</small><span class="price-row"><span>Pacote</span><span class="price">R$ 25,00</span></span></figcaption>
-          </figure>
-        </div>
-      </div>
-      <div class="dish-block">
-        <h3><span>Sobremesas</span></h3>
-        <div class="dish-grid">
-          <figure class="dish">
-            <img src="assets/img/merengue-morango.jpg" alt="Copo de merengue de morango com chantilly e morangos" loading="lazy">
-            <figcaption><span class="dish-name">Merengue de morango</span><span class="price-row"><span></span><span class="price">R$ 13,00</span></span></figcaption>
-          </figure>
-          <figure class="dish">
-            <img src="assets/img/torta-sonho-de-valsa.jpg" alt="Copos de torta Sonho de Valsa" loading="lazy">
-            <figcaption><span class="dish-name">Torta Sonho de Valsa</span><span class="price-row"><span></span><span class="price">R$ 13,00</span></span></figcaption>
-          </figure>
-          <figure class="dish">
-            <img src="assets/img/cheesecake.jpg" alt="Copo de cheesecake com calda de frutas vermelhas" loading="lazy">
-            <figcaption><span class="dish-name">Cheesecake</span><span class="price-row"><span></span><span class="price">R$ 13,00</span></span></figcaption>
-          </figure>
-        </div>
-      </div>
-    </div>
-
-    <p class="menu-foot">Também na vitrine: bolos, doces e bebidas geladas.</p>
+    <ul class="selos">
+      <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M9 14a5 5 0 0 1 2-9.6A6 6 0 0 1 22 6a5 5 0 0 1 1 8v5H9zM9 21h14v5H9z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Feito na hora</li>
+      <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 28V12M16 28c-7 0-10-6-10-13 6 0 10 3 10 8M16 23c0-6 4-10 10-10 0 8-4 13-10 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Ingredientes selecionados</li>
+      <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 27S4 20 4 11.5A6.5 6.5 0 0 1 16 8a6.5 6.5 0 0 1 12 3.5C28 20 16 27 16 27z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Sabor que conquista</li>
+      <li><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="8" cy="24" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="25" cy="24" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11.5 24h10M3 13h8v6H3zM21 24l-3-11h-4M18 13l2-4h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Delivery rápido</li>
+    </ul>
   </section>
 
   <div class="slogan-band">
@@ -211,8 +161,17 @@
         <a class="btn btn-ghost" href="https://wa.me/553491294309?text=Ol%C3%A1%2C%20Andressa!%20Vim%20pelo%20site%20da%20Pastelaria%20Canastra." target="_blank" rel="noopener">Falar com a Andressa no WhatsApp</a>
       </div>
     </div>
-    <div class="map">
-      <iframe title="Mapa: Pastelaria Canastra Loja 2" src="https://www.google.com/maps?q=Pastelaria+Canastra+loja+02,+R.+Maj.+Lima,+231+-+Centro,+Sacramento+-+MG&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="map" id="mapa">
+      <video class="map-video" src="assets/video/drone-centro.mp4" poster="assets/img/drone-centro.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+      <div class="map-card">
+        <span class="pin" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span>
+        <p><strong>Pastelaria Canastra Loja 2</strong><br>R. Maj. Lima, 231 – Centro, Sacramento</p>
+        <p class="map-nota"><span class="stars" aria-hidden="true">★★★★★</span> 5,0 no Google</p>
+        <div class="map-acoes">
+          <button class="btn btn-primary" type="button" id="carregar-mapa">Ver o mapa aqui</button>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Pastelaria+Canastra+loja+02,+R.+Maj.+Lima,+231,+Sacramento+-+MG" target="_blank" rel="noopener">Abrir no Google Maps</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -228,6 +187,7 @@
   <p class="social"><a href="https://www.instagram.com/pastelariacanastraloja2/" target="_blank" rel="noopener">Instagram @pastelariacanastraloja2</a></p>
 </footer>
 
+<script src="assets/horario.js"></script>
 <script>
   const v = document.querySelector('.hero-video video');
   const b = document.querySelector('.sound');
@@ -238,6 +198,11 @@
     b.textContent = v.muted ? 'Ativar som' : 'Desativar som';
   });
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) { v.removeAttribute('autoplay'); v.pause(); v.controls = true; }
+  document.getElementById('carregar-mapa').addEventListener('click', function () {
+    var box = document.getElementById('mapa');
+    box.innerHTML = '<iframe title="Mapa: Pastelaria Canastra Loja 2" src="https://www.google.com/maps?q=Pastelaria+Canastra+loja+02,+R.+Maj.+Lima,+231+-+Centro,+Sacramento+-+MG&output=embed" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>';
+    box.classList.add('map-on');
+  });
 </script>
 </body>
 </html>
