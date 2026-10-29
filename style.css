@@ -7,6 +7,8 @@
   --carvao: #2B1B12;
   --papel: #FFFDF9;
   --texto-suave: #6B5446;
+  --noite: #1E1512;
+  --noite-linha: rgba(252, 235, 194, .28);
 
   --display: "Fraunces", Georgia, serif;
   --body: "Figtree", system-ui, sans-serif;
@@ -129,49 +131,109 @@ h1, h2, h3 {
   height: 22px;
   background:
     radial-gradient(circle at 11px 0, var(--papel) 10px, transparent 10.5px) 0 0 / 22px 22px repeat-x,
-    var(--massa);
+    var(--noite);
 }
 .crimp-flip {
   background:
     radial-gradient(circle at 11px 22px, var(--papel) 10px, transparent 10.5px) 0 0 / 22px 22px repeat-x,
-    var(--massa);
+    var(--noite);
 }
 
-/* ---------- Cardápio ---------- */
+/* ---------- Cardápio (visual do cartaz) ---------- */
 .menu {
-  background: var(--massa);
-  padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1rem, 4vw, 3rem);
+  background: var(--noite);
+  color: var(--placa);
+  padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1rem, 4vw, 3rem) clamp(2.5rem, 5vw, 3.5rem);
 }
-.menu-head, .menu-cols { max-width: 1180px; margin: 0 auto; }
-.menu-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .5rem 2rem; margin-bottom: 2.5rem; }
-.menu h2 { font-size: clamp(2.6rem, 6vw, 4.2rem); }
-.menu-head p { margin: 0; color: var(--carvao); }
+.menu-head, .menu-cols, .dishes, .menu-foot { max-width: 1180px; margin-left: auto; margin-right: auto; }
+.menu-head { text-align: center; margin-bottom: clamp(2.5rem, 5vw, 3.5rem); }
+.menu h2 {
+  display: inline-block;
+  font-size: clamp(2.8rem, 7vw, 4.8rem);
+  color: var(--carvao);
+  background: var(--laranja);
+  border-radius: 50%;
+  padding: .25em .9em .3em;
+  transform: rotate(-2deg);
+}
+.ribbon {
+  display: table; position: relative; z-index: 1;
+  margin: -.6rem auto 0;
+  font: 600 clamp(1.05rem, 2.6vw, 1.5rem)/1 "Oswald", var(--body);
+  text-transform: uppercase; letter-spacing: .02em;
+  color: var(--carvao); background: var(--laranja);
+  padding: .55em 1.6em;
+  clip-path: polygon(0 0, 100% 0, 96% 50%, 100% 100%, 0 100%, 4% 50%);
+  transform: rotate(-1deg);
+  box-shadow: inset 0 -3px 0 var(--laranja-escuro);
+}
+.menu-stars { margin: .6rem 0 0; color: var(--placa); font-size: 1.5rem; letter-spacing: .25em; }
 .menu-cols {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 2rem clamp(1.5rem, 4vw, 3.5rem);
+  gap: 1rem clamp(1.5rem, 4vw, 3.5rem);
 }
-.menu h3 {
-  font-size: 1.6rem;
-  color: var(--laranja-escuro);
-  padding-bottom: .4rem;
-  border-bottom: 3px solid var(--carvao);
-  margin-bottom: .75rem;
+.menu-group + .menu-group { border-left: 1px solid var(--noite-linha); padding-left: clamp(1.5rem, 3vw, 2.5rem); }
+.menu h3 { margin: 0 0 .9rem; line-height: 1; }
+.menu h3 span {
+  display: inline-block;
+  font: 600 1.55rem/1 "Oswald", var(--body);
+  text-transform: uppercase; letter-spacing: .01em;
+  color: var(--carvao);
+  background: var(--laranja);
+  padding: .4rem 1.6rem .45rem .8rem;
+  /* faixa de pincel */
+  clip-path: polygon(0 8%, 30% 0, 70% 6%, 100% 0, 94% 34%, 100% 58%, 92% 100%, 55% 92%, 20% 100%, 0 90%, 3% 50%);
 }
-.menu ul { list-style: none; margin: 0 0 2rem; padding: 0; }
-.menu li {
-  display: flex; align-items: baseline; justify-content: space-between; gap: 1rem;
-  padding: .55rem 0; border-bottom: 1px dashed rgba(43, 27, 18, .35);
+.menu h3 small { font-size: .62em; text-transform: none; font-weight: 500; }
+.menu ul { list-style: none; margin: 0 0 2.2rem; padding: 0; }
+.menu li { display: flex; align-items: baseline; gap: .4rem; padding: .3rem 0; }
+.menu .item { font-size: 1.1rem; font-weight: 500; color: var(--placa); }
+.menu .item small { display: block; font-size: .9rem; font-weight: 400; color: rgba(255, 243, 218, .65); padding-left: .9rem; }
+.menu .dots { flex: 1; min-width: 1rem; border-bottom: 2px dotted rgba(255, 243, 218, .45); transform: translateY(-.3em); }
+.menu .price { font-weight: 700; white-space: nowrap; font-variant-numeric: tabular-nums; color: #FF8A3D; font-size: 1.1rem; }
+
+.delivery {
+  display: block; text-decoration: none; color: var(--placa);
+  margin-top: .5rem; padding: 1.2rem 0 0;
 }
-.menu .item { font-weight: 700; font-size: 1.08rem; }
-.menu .item small { display: block; font-weight: 400; color: var(--texto-suave); font-size: .92rem; }
-.menu .price { font-weight: 700; white-space: nowrap; font-variant-numeric: tabular-nums; color: var(--laranja-escuro); }
-.h-note { font-family: var(--body); font-size: .9rem; font-weight: 500; color: var(--carvao); }
-.delivery { background: var(--carvao); color: var(--papel); border-radius: 14px; padding: 1.25rem; }
-.delivery-title { font-family: var(--display); font-weight: 900; font-size: 1.6rem; margin: 0 0 .75rem; color: var(--massa); }
-.delivery .btn { background: #25D366; border-color: #25D366; color: #fff; }
-.delivery .btn:hover { background: #1EBE5B; border-color: #1EBE5B; }
-.menu-foot { max-width: 1180px; margin: 1rem auto 0; font-weight: 500; }
+.delivery-pre { display: block; font: italic 800 1.8rem/1 "Fraunces", var(--display); }
+.delivery-big {
+  display: block;
+  font: italic 800 clamp(2.6rem, 5vw, 3.4rem)/1 "Fraunces", var(--display);
+  color: var(--laranja); transform: rotate(-4deg); transform-origin: left;
+  margin: .1rem 0 .9rem;
+}
+.delivery-num {
+  display: inline-flex; align-items: center; gap: .5rem;
+  font: 700 1.6rem/1 var(--body);
+  background: #25D366; color: #fff; border-radius: 999px; padding: .6rem 1.1rem;
+}
+.delivery:hover .delivery-num { background: #1EBE5B; }
+
+.dishes { margin-top: 1rem; border-top: 1px solid var(--noite-linha); padding-top: 2.2rem; }
+.dish-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(.75rem, 2vw, 1.5rem); }
+.dish { margin: 0; }
+.dish img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 12px; border: 2px solid rgba(232, 97, 26, .6); }
+.dish figcaption {
+  display: flex; flex-direction: column; gap: .15rem;
+  padding: .6rem .1rem 0; font-weight: 700; font-size: 1.05rem;
+}
+.menu-foot { margin-top: 2.2rem; color: rgba(255, 243, 218, .75); }
+
+.slogan-band {
+  background: var(--placa);
+  border-top: 4px solid var(--laranja);
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+  gap: 1rem clamp(1.5rem, 5vw, 4rem);
+  padding: 1.6rem clamp(1rem, 4vw, 3rem);
+  text-align: center;
+}
+.seal {
+  margin: 0; font: 600 1.15rem/1.1 "Oswald", var(--body); text-transform: uppercase;
+  border-top: 2px solid var(--carvao); border-bottom: 2px solid var(--carvao); padding: .4rem .8rem;
+}
+.slogan { margin: 0; font: italic 800 clamp(1.7rem, 4.5vw, 2.6rem)/1.1 "Fraunces", var(--display); color: var(--laranja-escuro); }
 
 /* ---------- Fotos ---------- */
 .photos { max-width: 1180px; margin: 0 auto; padding: clamp(3rem, 6vw, 5rem) clamp(1rem, 4vw, 3rem); }
@@ -216,6 +278,8 @@ footer p { margin: 0; }
   .hero { grid-template-columns: 1fr; }
   .hero-video { width: min(78%, 320px); }
   .menu-cols { grid-template-columns: 1fr 1fr; }
+  .menu-group:nth-child(3) { border-left: 0; padding-left: 0; }
+  .dish-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .visit { grid-template-columns: 1fr; }
   .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 170px;
     grid-template-areas: "a b" "a c" "e e" "d g" "d h" "f f"; }
@@ -224,6 +288,7 @@ footer p { margin: 0; }
   .fascia nav a:not(:last-child) { display: none; }
   .oval { font-size: 1.2rem; }
   .menu-cols { grid-template-columns: 1fr; }
+  .menu-group + .menu-group { border-left: 0; padding-left: 0; }
   .menu ul { margin-bottom: 1rem; }
 }
 
